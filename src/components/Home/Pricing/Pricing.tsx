@@ -17,15 +17,15 @@ const Pricing:React.FC<Props> = ({pricing}:Props) => {
                 {
                     pricing.map(price=>{
                         return(
-                            <div className="col-lg-4">
+                            <div className="col-lg-4" key={price.id}>
                                 <h1>{price.price}</h1>
                                 <h4>{price.type}</h4>
                                 <div className="perks">
                                     <ul>
                                         {
-                                            price.perks.map(perk=>{
+                                            price.perks.map((perk,idx)=>{
                                                 return(
-                                                    <li>{perk}</li>
+                                                    <li key={idx}>{perk}</li>
                                                 )
                                             })
                                         }
